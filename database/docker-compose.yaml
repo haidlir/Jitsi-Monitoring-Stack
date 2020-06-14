@@ -1,0 +1,86 @@
+version: '3.2'
+
+networks:
+  jitsi-monitoring-stack:
+    external: true
+
+volumes:
+  influxdb_data:
+  elasticsearch_data:
+
+services:
+
+  influxdb:
+    image: influxdb:1.7.4
+    networks:
+      jitsi-monitoring-stack:
+        aliases:
+          - influxdb
+    volumes:
+      - type: volume
+        source: influxdb_data
+        target: /var/lib/influxdb
+    environment:
+     - INFLUXDB_DB=${INFLUX_DB}
+     - INFLUXDB_ADMIN_ENABLED=true
+     - INFLUXDB_HTTP_AUTH_ENABLED=${INFLUX_HTTP_AUTH}
+     - INFLUXDB_ADMIN_USER=${INFLUX_USERNAME} 
+     - INFLUXDB_ADMIN_PASSWORD=${INFLUX_PASSWORD}
+    privileged: false
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.2
+    networks:
+      jitsi-monitoring-stack:
+        aliases:
+          - elasticsearch
+    ports:
+      - "9200:9200"
+    volumes:
+      - type: bind
+        source: ./elasticsearch/conf/elasticsearch.yml
+        target: /usr/share/elasticsearch/config/elasticsearch.yml
+        read_only: true
+      - type: volume
+        source: elasticsearch_data
+        target: /usr/share/elasticsearch/data
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      discovery.type: single-node
+      ELASTIC_PASSWORD: ${ELASTICSEARCH_PASSWORD}
+    privileged: false
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.6.2
+    networks:
+      jitsi-monitoring-stack:
+        aliases:
+          - kibana
+    ports:
+      - "5601:5601"
+    volumes:
+      - type: bind
+        source: ./kibana/conf/kibana.yml
+        target: /usr/share/kibana/config/kibana.yml
+        read_only: true
+    environment:
+      ELASTICSEARCH_USERNAME: ${ELASTICSEARCH_USERNAME}
+      ELASTICSEARCH_PASSSWORD: ${ELASTICSEARCH_PASSWORD}
+    privileged: false
+    depends_on:
+      - elasticsearch
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"

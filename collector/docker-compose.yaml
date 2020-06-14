@@ -1,0 +1,47 @@
+version: '3.2'
+
+networks:
+  jitsi-monitoring-stack:
+    external: true
+
+services:
+
+  telegraf:
+    image: telegraf
+    networks:
+      jitsi-monitoring-stack:
+        aliases:
+          - telegraf
+    volumes:
+      - type: bind
+        source: ./telegraf/conf/telegraf.conf
+        target: /etc/telegraf/telegraf.conf
+        read_only: true
+    restart: always
+    privileged: false
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+  fluentd:
+    build: ./fluentd
+    networks:
+      jitsi-monitoring-stack:
+        aliases:
+          - fluentd
+    volumes:
+      - type: bind
+        source: ./fluentd/conf
+        target: /fluentd/etc
+        read_only: true
+    restart: always
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp" 
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
