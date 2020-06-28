@@ -16,7 +16,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1593326816712,
+  "iteration": 1593337746210,
   "links": [
     {
       "asDropdown": false,
@@ -737,6 +737,83 @@
       "type": "stat"
     },
     {
+      "datasource": "InfluxDB",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 12,
+        "y": 6
+      },
+      "hideTimeOverride": true,
+      "id": 19,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "targets": [
+        {
+          "alias": "$tag_server",
+          "groupBy": [],
+          "measurement": "jicofo-stats",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "bridge_selector_operational_bridge_count"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "node",
+              "operator": "=~",
+              "value": "/^$nodes$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": "1m",
+      "timeShift": null,
+      "title": "Operational Bridge Count",
+      "type": "stat"
+    },
+    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
@@ -789,7 +866,7 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 12,
+        "w": 8,
         "x": 0,
         "y": 12
       },
@@ -817,6 +894,122 @@
       },
       "pluginVersion": "7.0.3",
       "repeat": "videobridges",
+      "scopedVars": {
+        "videobridges": {
+          "selected": false,
+          "text": "jitsi-oprek-003",
+          "value": "jitsi-oprek-003"
+        }
+      },
+      "targets": [
+        {
+          "alias": "$tag_node",
+          "groupBy": [
+            {
+              "params": [
+                "node"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "jvb-health",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "http_response_code"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "node",
+              "operator": "=~",
+              "value": "/^$videobridges$/"
+            }
+          ]
+        }
+      ],
+      "timeFrom": "1m",
+      "timeShift": null,
+      "title": "Videobridge  HTTP Status Code: $videobridges",
+      "type": "stat"
+    },
+    {
+      "datasource": "InfluxDB",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [
+            {
+              "from": "",
+              "id": 0,
+              "operator": "",
+              "text": "OK",
+              "to": "",
+              "type": 2,
+              "value": "200"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "yellow",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 200
+              },
+              {
+                "color": "red",
+                "value": 300
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 8,
+        "x": 8,
+        "y": 12
+      },
+      "hideTimeOverride": true,
+      "id": 17,
+      "links": [
+        {
+          "targetBlank": true,
+          "title": "Link to Videobridge $videobridges",
+          "url": "/d/eF-IqqiMk/videobridges?orgId=1&refresh=30s&var-nodes=$videobridges"
+        }
+      ],
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "/^http_response_code$/",
+          "values": false
+        }
+      },
+      "pluginVersion": "7.0.3",
+      "repeat": null,
+      "repeatIteration": 1593337746210,
+      "repeatPanelId": 16,
       "scopedVars": {
         "videobridges": {
           "selected": false,
@@ -903,12 +1096,12 @@
       },
       "gridPos": {
         "h": 5,
-        "w": 12,
-        "x": 12,
+        "w": 8,
+        "x": 16,
         "y": 12
       },
       "hideTimeOverride": true,
-      "id": 17,
+      "id": 18,
       "links": [
         {
           "targetBlank": true,
@@ -931,7 +1124,7 @@
       },
       "pluginVersion": "7.0.3",
       "repeat": null,
-      "repeatIteration": 1593326816712,
+      "repeatIteration": 1593337746210,
       "repeatPanelId": 16,
       "scopedVars": {
         "videobridges": {
@@ -1061,6 +1254,6 @@
   "timezone": "",
   "title": "Jicofo",
   "uid": "IA3gHeZMz",
-  "version": 33
+  "version": 2
 }
 
