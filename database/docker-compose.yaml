@@ -12,6 +12,8 @@ services:
 
   influxdb:
     image: influxdb:1.7.4
+    ports:
+      - "8086:8086"
     networks:
       jitsi-monitoring-stack:
         aliases:
