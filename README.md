@@ -40,6 +40,9 @@ Will be added Later
 ### Visualization
 Will be added Later
 
+### Jitsi Videobridge Configuration
+Follow this guide, [Link](https://github.com/haidlir/jitsi-monitoring#cara-mencoba)
+
 ## Credits
 1. InfluxData
 2. Elastic.co
