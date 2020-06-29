@@ -21,6 +21,15 @@ services:
       - type: volume
         source: grafana_data
         target: /var/lib/grafana
+      - type: bind
+        source: ./conf/grafana/jitsi-monitoring-datasource.yaml
+        target: /etc/grafana/provisioning/datasources/jitsi-monitoring-datasource.yaml
+      - type: bind
+        source: ./conf/grafana/jitsi-dashboard.yaml
+        target: /etc/grafana/provisioning/dashboards/jitsi-dashboard.yaml
+      - type: bind
+        source: ./conf/grafana/dashboards
+        target: /home/grafana/dashboards
     environment:
       - "GF_SECURITY_ADMIN_PASSWORD=changeme"
     privileged: false

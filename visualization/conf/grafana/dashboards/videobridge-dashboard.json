@@ -33,7 +33,7 @@
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -46,7 +46,7 @@
       "type": "row"
     },
     {
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -149,7 +149,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -303,7 +303,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -379,7 +379,7 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -396,7 +396,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -552,7 +552,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -707,7 +707,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -863,7 +863,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -993,7 +993,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1123,7 +1123,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1253,7 +1253,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1409,7 +1409,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1539,7 +1539,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1666,7 +1666,7 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": "Jitsi-Monitoring",
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1683,7 +1683,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1819,7 +1819,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1949,7 +1949,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2094,7 +2094,7 @@
           "text": "jitsi-oprek-2",
           "value": "jitsi-oprek-2"
         },
-        "datasource": "InfluxDB",
+        "datasource": "Jitsi-Monitoring",
         "definition": "SHOW TAG VALUES ON \"jitsims_db\" FROM \"jvb-stats\" WITH KEY = \"node\"",
         "hide": 0,
         "includeAll": false,

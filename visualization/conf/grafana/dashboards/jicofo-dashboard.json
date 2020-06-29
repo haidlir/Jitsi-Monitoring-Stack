@@ -42,7 +42,7 @@
       "type": "row"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -121,7 +121,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -198,7 +198,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -275,7 +275,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -352,7 +352,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -429,7 +429,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -506,7 +506,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -583,7 +583,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -660,7 +660,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -737,7 +737,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -828,7 +828,7 @@
       "type": "row"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -942,7 +942,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1058,7 +1058,7 @@
       "type": "stat"
     },
     {
-      "datasource": "InfluxDB",
+      "datasource": "Jitsi-Monitoring",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -1187,7 +1187,7 @@
           "text": "vidcon.haidlir.id",
           "value": "vidcon.haidlir.id"
         },
-        "datasource": "InfluxDB",
+        "datasource": "Jitsi-Monitoring",
         "definition": "SHOW TAG VALUES ON \"jitsims_db\" FROM \"jicofo-stats\" WITH KEY = \"node\"",
         "hide": 0,
         "includeAll": false,
@@ -1213,7 +1213,7 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "InfluxDB",
+        "datasource": "Jitsi-Monitoring",
         "definition": "SHOW TAG VALUES ON \"jitsims_db\" FROM \"jvb-stats\" WITH KEY = \"node\"",
         "hide": 0,
         "includeAll": true,
